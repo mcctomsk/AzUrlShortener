@@ -58,11 +58,11 @@ namespace Cloud5mins.Function
                 {
                     return invalidRequest;
                 }
-                else
-                {
-                   userId = principal.FindFirst(ClaimTypes.NameIdentifier).Value;
-                   log.LogInformation("Authenticated user {user}.", userId);
-                }
+//                else
+//                {
+//                   userId = principal.FindFirst(ClaimTypes.NameIdentifier).Value;
+//                   log.LogInformation("Authenticated user {user}.", userId);
+//                }
 
                 result.UrlList = await stgHelper.GetAllShortUrlEntities();
                 result.UrlList = result.UrlList.Where(p => !(p.IsArchived ?? false)).ToList();

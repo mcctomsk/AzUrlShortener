@@ -81,15 +81,15 @@ namespace Cloud5mins.domain
                 log.LogWarning("Request was not authenticated.");
                 return new UnauthorizedResult();
             }
-            if (principal.FindFirst(ClaimTypes.NameIdentifier) is null)
-            {
-                log.LogError("Claim not Found");
-                return new BadRequestObjectResult(new
-                {
-                    message = "Claim not Found",
-                    StatusCode = System.Net.HttpStatusCode.BadRequest
-                });
-            }
+//            if (principal.FindFirst(ClaimTypes.NameIdentifier) is null)
+//            {
+//                log.LogError("Claim not Found");
+//                return new BadRequestObjectResult(new
+//                {
+//                    message = "Claim not Found",
+//                    StatusCode = System.Net.HttpStatusCode.BadRequest
+//                });
+//            }
             return null;
         }
     }
